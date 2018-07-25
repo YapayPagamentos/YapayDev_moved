@@ -1,2 +1,4 @@
 # YapayDev
-Intermediador e Gateway de pagamento Yapay.
+
+Todas as informações que estão no repositório YapayDev (link abaixo) foram replicadas neste repositório.
+https://github.com/YapayDev.
