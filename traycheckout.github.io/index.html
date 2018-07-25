@@ -1,0 +1,110 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>TrayCheckout Solução de Pagamento Online - Documentação para Desenvolvedores</title>
+<!-- for-mobile-apps -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Coming Soon Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- //for-mobile-apps -->
+<link href='//fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+	<div class="content">
+    <center>
+        <img id="logo-tray" src="https://images.tcdn.com.br/static_inst/tc/tray-cdn/uploads/traycheckout-logo-white.svg" alt="tray checkout meios de pagamento logo" height="112" width="250" style="padding-bottom: 20px">
+    </center>
+		<h1>Em breve novidades!</h1>
+			<div class="main">
+				<div id="countdown9" class="ClassyCountdownDemo"></div>
+				
+				<div class="subscribe">
+					<h2>Enquanto isso, acesse nossa documentação!</h2>
+					<!--div class="contact-form">
+						<form action="#" method="post">
+							<input type="email" value="Email" name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">	
+							<input type="submit" value="Subscribe">	
+						</form>
+					</div-->
+                    <center>
+                        <p class="copy_rights">
+                            <a href="https://www.traycheckout.com.br/dev">Visão Geral</a> | 
+                            <a href="https://www.traycheckout.com.br/dev/manuais-e-downloads/#lang-php">Manuais e Downloads</a>
+                        </p>
+                    </center>
+				</div>
+			</div>
+		<!--p class="copy_rights">&copy; 2016 Coming Soon Widget. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p-->
+	</div>
+				<script src="js/jquery.min.js"></script>
+				<script src="js/jquery.knob.js"></script>
+				<script src="js/jquery.throttle.js"></script>
+				<script src="js/jquery.classycountdown.js"></script>
+									<script>
+                                        $(document).ready(function() {
+                                            $('#countdown9').ClassyCountdown({
+                                                end: '1503412200',
+                                                now: parseInt(Date.now() / 1000),
+                                                labels: true,
+                                                style: {
+                                                    element: "",
+                                                    textResponsive: .5,
+                                                    days: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#ffffff",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: 'font-weight:300; color:#fff;'
+                                                    },
+                                                    hours: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#0a99db",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    },
+                                                    minutes: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#08b63f",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    },
+                                                    seconds: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#e66c00",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    }
+
+                                                },
+                                                onEndCallback: function() {
+                                                    console.log("Time out!");
+                                                }
+                                            });
+                                        });
+                                    </script>
+</body>
+</html>

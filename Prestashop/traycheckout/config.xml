@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <module>
+            <name>traycheckout</name>
+            <displayName><![CDATA[TrayCheckout]]></displayName>
+            <version><![CDATA[1.0]]></version>
+            <description><![CDATA[Aceitar pagamentos via TrayCheckout]]></description>
+            <author><![CDATA[Ifredi]]></author>
+            <tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall>Tem certeza de que pretende eliminar os seus dados?</confirmUninstall>
+            <is_configurable>1</is_configurable>
+            <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+        </module>

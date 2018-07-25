@@ -1,0 +1,169 @@
+<_>
+   <form_key>Qfmkz62G1s2FSDgj</form_key>
+   <name>Tray_CheckoutApi</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>Extensão Yapay Intermediador API para Magento</summary>
+   <description>Yapay Intermediador is a payment facilitator that offers benefits to merchants and buyers. Focused on practicality and conversion, enables virtual stores offer many payments possibilites, no need contracts with financial operators. 
+ 
+ This module is able to do the integration with the Payment API of the Yapay Intermediador. In this case, the consumer isn&apos;t redirect to Yapay Intermediador environment. Every steps of the payment are made in the Magento Checkout. 
+ 
+ O Yapay Intermediador é um facilitador de pagamento que oferece benefícios aos lojistas e aos compradores. Focado em praticidade e conversão, possibilita que as lojas virtuais ofereçam diversas formas de pagamento, sem burocracia ou necessidade de contrato com operadoras financeiras. 
+ 
+Este módulo é capaz de fazer a integração com a API do pagamento do Yapay Intermediador. Neste caso, o consumidor não é redirecionar para ambiente Yapay Intermediador. Todos os passos de o pagamento são feito no Checkout Magento.</description>
+   <license>OSL v3.0</license>
+   <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
+   <version>1.1.0</version>
+   <stability>stable</stability>
+   <notes>Versão 0.1.0
+ 
+ - Primeira versão liberada do Yapay Intermediador
+ 
+ Versão 0.2.0
+ 
+ - Correção no envio do número de telefone.
+ - Melhorias no envio dos dados.
+ 
+ Versão 0.3.0
+ 
+ - Correções de integração com a API de Simulação de Parcelamento.
+ - Envio de um valor padrão ao finalizar por boleto e transferência online.
+ - Ajuste no envio das requisições para as APIs do Yapay Intermediador.
+ - Incrementado log personalizado no módulo.
+ 
+ Versão 0.4.0
+ 
+ - Ajustes nas URLs de integração com o Yapay Intermediador.
+ 
+ Versão 0.5.0
+ 
+ - Melhorias no código de integração com o Yapay Intermediador
+ 
+ Versão 0.6.0
+ 
+ - Melhorias na exibição das bandeiras de cartão de crédito
+ - Melhorias na exibição dos dados de parcelamento
+ 
+ Versão 0.7.0
+ 
+ - Melhorias no NAS (Notificação Automática de Status).
+ 
+ Versão 0.8.0
+ 
+ - Ajuste na validação dos campos enviados na integração.
+
+ Versão 0.9.0
+ 
+ - Ajustes no NAS (Notificação Automática de Status).
+
+ Versão 1.1.0
+ 
+ - Melhoria nos dados capturados para realização da análise de risco.</notes>
+   <authors>
+      <name>
+         <name>Yapay Intermediador</name>
+      </name>
+      <user>
+         <user>traycheckout</user>
+      </user>
+      <email>
+         <email>integracao@yapay.com.br</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+            <name>Mage_Core_Modules</name>
+         </name>
+         <channel>
+            <channel/>
+            <channel>community</channel>
+         </channel>
+         <min>
+            <min/>
+            <min>1.6.0.0</min>
+         </min>
+         <max>
+            <max/>
+            <max>1.7</max>
+         </max>
+         <files>
+            <files>    </files>
+            <files>    </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>mageskin</target>
+         <target>mageskin</target>
+         <target>mageetc</target>
+      </target>
+      <path>
+         <path/>
+         <path>Tray/CheckoutApi</path>
+         <path>frontend/base/default/template/tray/checkoutapi</path>
+         <path>frontend/base/default/layout/tray_checkoutapi.xml</path>
+         <path>adminhtml/default/default/template/tray/checkoutapi</path>
+         <path>adminhtml/default/default/layout/tray_checkoutapi.xml</path>
+         <path>frontend/base/default/tray/checkoutapi</path>
+         <path>adminhtml/default/default/tray/checkoutapi</path>
+         <path>modules/Tray_CheckoutApi.xml</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>dir</type>
+         <type>file</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>

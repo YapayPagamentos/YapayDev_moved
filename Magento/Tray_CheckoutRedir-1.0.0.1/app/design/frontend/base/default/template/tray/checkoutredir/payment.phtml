@@ -1,0 +1,191 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to suporte@tray.net.br so we can send you a copy immediately.
+ *
+ * @category   Tray
+ * @package    Tray_CheckoutRedir
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+
+<div class="page-head">
+    <h2 class="sub-title">Finalizando sua compra com Tray Checkout</h2>
+</div>
+
+<?php $config = Mage::getModel('checkoutredir/config')->getExibitionWebCheckout(); ?>
+
+<?php 
+    switch($config) 
+    { 
+        case 1:
+?>            
+        <script type="text/javascript">
+            var div_pd = document.createElement("div");
+            var center_frame = document.createElement("center");
+            var div_frame = document.createElement("div");
+            var img_close = document.createElement("img");
+            var form_tc = document.createElement("iframe");
+
+            form_tc.setAttribute("style","border:0px");
+            form_tc.setAttribute("width","970");
+            form_tc.setAttribute("height","700");
+            form_tc.setAttribute("name","tc_frame");
+
+            img_close.setAttribute("style","position: relative;margin-left: 970px;margin-top: -20px;");
+            img_close.setAttribute("src","<?php echo $this->getSkinUrl('tray/checkoutredir/images/close.png'); ?>");
+
+            div_frame.setAttribute("style","padding: 10px;background-color: #fff;width: 980px;margin-top: 50px");
+            div_frame.setAttribute("id","lightbox");
+
+            div_pd.setAttribute("id","overlay-tc");
+
+            div_frame.appendChild(img_close);
+            div_frame.appendChild(form_tc);
+
+            center_frame.appendChild(div_frame);
+
+            div_pd.appendChild(center_frame);
+
+            document.body.appendChild(div_pd);
+        </script>
+        
+        <table style="width:100%;">
+            <tr>
+                <td style="width:100%">
+                    Sua compra est&aacute; em processo de finaliza&ccedil;&atilde;o.<br />
+                    Caso a p&aacute;gina de finaliza&ccedil;&atilde;o de pagamento n&atilde;o se inicie automaticamente, <a href="#" id="tc_lightbox">Clique Aqui</a>
+                    <br />
+                    <br />
+                    
+                    <img src="<?php echo $this->getSkinUrl('tray/checkoutredir/images/BannerTrayCheckout890px.png'); ?>" />
+                    <?php  $this->getPayment(); ?>
+                </td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            document.getElementById('form_tc').setAttribute("target", "tc_frame");
+            document.getElementById('form_tc').submit();
+            document.getElementById('overlay-tc').onclick = function (){
+                this.style.display = "none";
+            };
+            document.getElementById('tc_lightbox').onclick = function (){
+                document.getElementById('overlay-tc').style.display = "block";
+            };
+        </script>
+<?php
+            break;
+        case 2:
+?>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:100%">
+                    Sua compra est&aacute; em processo de finaliza&ccedil;&atilde;o.
+                    <br />
+                    <br />                    
+                    <iframe name="tc_frame" width="100%" height="900" style="border:0px; overflow-x:hidden" ></iframe>
+                    <img src="<?php echo $this->getSkinUrl('tray/checkoutredir/images/BannerTrayCheckout890px.png'); ?>" />
+                    <?php  $this->getPayment(); ?>
+                </td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            document.getElementById('form_tc').setAttribute("target", "tc_frame");
+            document.getElementById('form_tc').submit();
+        </script>        
+<?php
+            break;
+        case 3:
+?>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:100%">
+                    Sua compra est&aacute; em processo de finaliza&ccedil;&atilde;o.<br />
+                    Você será redirecionado para o Tray Checkout. Caso a p&aacute;gina de finaliza&ccedil;&atilde;o de pagamento n&atilde;o se inicie automaticamente, <a href="#" id="tc_lightbox">Clique Aqui</a>
+                    <br />
+                    <br />
+                    <img src="<?php echo $this->getSkinUrl('tray/checkoutredir/images/BannerTrayCheckout890px.png'); ?>" />
+                    <?php  $this->getPayment(); ?>
+                </td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            document.getElementById('form_tc').setAttribute("target", "_blank");
+            document.getElementById('form_tc').submit();
+            document.getElementById('tc_lightbox').onclick = function (){
+                document.getElementById('form_tc').submit();
+            };
+        </script>        
+<?php        
+            break;
+        default:
+?>
+        <script type="text/javascript">
+            var div_pd = document.createElement("div");
+            var center_frame = document.createElement("center");
+            var div_frame = document.createElement("div");
+            var img_close = document.createElement("img");
+            var form_tc = document.createElement("iframe");
+
+            form_tc.setAttribute("style","border:0px");
+            form_tc.setAttribute("width","970");
+            form_tc.setAttribute("height","700");
+            form_tc.setAttribute("name","tc_frame");
+
+            img_close.setAttribute("style","position: relative;margin-left: 970px;margin-top: -20px;");
+            img_close.setAttribute("src","<?php echo $this->getSkinUrl('tray/checkoutredir/images/close.png'); ?>");
+
+            div_frame.setAttribute("style","padding: 10px;background-color: #fff;width: 980px;margin-top: 50px");
+            div_frame.setAttribute("id","lightbox");
+
+            div_pd.setAttribute("id","overlay-tc");
+
+            div_frame.appendChild(img_close);
+            div_frame.appendChild(form_tc);
+
+            center_frame.appendChild(div_frame);
+
+            div_pd.appendChild(center_frame);
+
+            document.body.appendChild(div_pd);
+        </script>
+        
+        <table style="width:100%;">
+            <tr>
+                <td style="width:100%">
+                    Sua compra est&aacute; em processo de finaliza&ccedil;&atilde;o.<br />
+                    Caso a p&aacute;gina de finaliza&ccedil;&atilde;o de pagamento n&atilde;o se inicie automaticamente, <a href="#" id="tc_lightbox">Clique Aqui</a>
+                    <br />
+                    <br />
+                     <img src="<?php echo $this->getSkinUrl('tray/checkoutredir/images/BannerTrayCheckout890px.png'); ?>" />
+                    <?php  $this->getPayment(); ?>
+                </td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            document.getElementById('form_tc').setAttribute("target", "tc_frame");
+            document.getElementById('form_tc').submit();
+            document.getElementById('overlay-tc').onclick = function (){
+                this.style.display = "none";
+            };
+            document.getElementById('tc_lightbox').onclick = function (){
+                document.getElementById('overlay-tc').style.display = "block";
+            };
+        </script>     
+<?php        
+            break;
+    } 
+?>

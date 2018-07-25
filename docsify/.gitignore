@@ -1,0 +1,6 @@
+*.log
+.DS_Store
+/themes/
+node_modules
+/lib/
+.idea

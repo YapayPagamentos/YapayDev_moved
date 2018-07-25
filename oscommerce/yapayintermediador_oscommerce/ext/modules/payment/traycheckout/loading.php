@@ -1,0 +1,1 @@
+<div><center><img src="images/loading.gif" width="32" height="32"> Aguarde, estamos processando seu pagamento.</center></div>

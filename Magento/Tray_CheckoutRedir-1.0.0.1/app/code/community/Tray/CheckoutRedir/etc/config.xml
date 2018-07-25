@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to suporte@tray.net.br so we can send you a copy immediately.
+ *
+ * @category   Tray
+ * @package    Tray_CheckoutRedir
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Tray_CheckoutRedir>
+            <version>0.1.10</version>
+        </Tray_CheckoutRedir>
+    </modules>
+    <global>
+        <models>
+            <checkoutredir>
+                <class>Tray_CheckoutRedir_Model</class>
+                <resourceModel>checkoutredir_mysql4</resourceModel>
+            </checkoutredir>
+            <checkoutredir_mysql4>
+                <class>Tray_CheckoutRedir_Model_Mysql4</class>
+                <entities>
+                    <api_debug>
+                        <table>checkoutredir_api_debug</table>
+                    </api_debug>
+                </entities>
+            </checkoutredir_mysql4>
+        </models>
+        <resources>
+            <checkoutredir_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </checkoutredir_write>
+            <checkoutredir_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </checkoutredir_read>
+        </resources>
+	<blocks>
+            <checkoutredir>
+                <class>Tray_CheckoutRedir_Block</class>
+            </checkoutredir>
+        </blocks>
+	<helpers>
+            <checkoutredir>
+                <class>Tray_CheckoutRedir_Helper</class>
+            </checkoutredir>
+	</helpers>
+        <events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <checkoutredir_observer>
+                        <type>singleton</type>
+                        <class>checkoutredir/observer</class>
+                        <method>sendEmailFrontend</method>
+                    </checkoutredir_observer>
+                </observers>
+            </checkout_onepage_controller_success_action>
+            <checkout_multishipping_controller_success_action>
+                <observers>
+                    <checkoutredir_observer>
+                        <type>singleton</type>
+                        <class>checkoutredir/observer</class>
+                        <method>sendEmailFrontend</method>
+                    </checkoutredir_observer>
+                </observers>
+            </checkout_multishipping_controller_success_action>
+        </events>
+    </global>
+    <frontend>
+        <secure_url>
+            <checkoutredir>/checkoutredir/standard</checkoutredir>
+        </secure_url>   
+        <routers>
+            <checkoutredir>
+                <use>standard</use>
+                <args>
+                    <module>Tray_CheckoutRedir</module>
+                    <frontName>checkoutredir</frontName>
+                </args>
+            </checkoutredir>
+        </routers>
+        <translate>
+            <modules>
+                <checkoutredir>
+                    <files>
+                        <default>Tray_CheckoutRedir.csv</default>
+                    </files>
+                </checkoutredir>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <checkoutredir>
+                    <file>tray_checkoutredir.xml</file>
+                </checkoutredir>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <checkoutredir>
+                    <files>
+                        <default>Tray_CheckoutRedir.csv</default>
+                    </files>
+                </checkoutredir>
+            </modules>
+        </translate>        
+        <layout>
+            <updates>
+                <checkoutredir>
+                    <file>tray_checkoutredir.xml</file>
+                </checkoutredir>
+            </updates>
+        </layout>        
+    </adminhtml>
+    <default>
+        <payment>
+            <checkoutredir_geral>
+                  <active>0</active>
+                  <model>Tray_CheckoutRedir_Model_Geral</model>
+                  <order_status>pending</order_status>
+                  <title>Tray Checkout</title>
+                  <allowspecific>1</allowspecific>
+                  <retorno>http://www.urldoseusite.com.br/index.php/CheckoutRedir_Geral/standard/success/</retorno>
+            </checkoutredir_geral>
+        </payment>
+		<checkoutredir>
+            <settings>
+                <exibitionmodal>1</exibitionmodal>
+            </settings>
+        </checkoutredir>
+    </default>
+</config>
